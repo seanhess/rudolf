@@ -3,7 +3,41 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
 <script src="index.js" type="text/javascript"></script>
 
+<style>
+    .control {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0px;
+    }
+
+    .control.left {
+        background: blue;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        left: 50%;
+    }
+
+    .control.right {
+        background: red;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+    }
+
+</style>
+
 <body>
+
+<div id="left" class="control left">
+
+</div>
+
+<div id="right" class="control right">
+
+</div>
+
 
 </body>
 </html>
