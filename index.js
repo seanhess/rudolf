@@ -79,26 +79,30 @@ $(document)
 })
 
 
-$(".control")
-.on('touchup', function() {
+$(".control.left")
+.on('touchend', function() {
     setLeft(STOP)
+})
+
+$(".control.right")
+.on('touchend', function() {
     setRight(STOP)
 })
 
-$(".control.left.up").on('touchdown', function() {
+$(".control.left.up").on('touchstart', function() {
     setLeft(FORWARD)
 })
 
-$(".control.left.down").on('touchdown', function() {
-    setLeft(BACK)
+$(".control.left.down").on('touchstart', function() {
+    setLeft(FORWARD)
 })
 
-$(".control.right.up").on('touchdown', function() {
-    setRight(FORWARD)    
+$(".control.right.up").on('touchstart', function() {
+    setLeft(FORWARD)    
 })
 
-$(".control.right.down").on('touchdown', function() {
-    setRight(BACK)    
+$(".control.right.down").on('touchstart', function() {
+    setLeft(FORWARD)
 })
 
 
