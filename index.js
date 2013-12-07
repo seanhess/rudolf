@@ -20,79 +20,87 @@ var RIGHT = 4;
 
 var pressed = false
 
-// $(document)
+$(document)
 
-// .on('keyup', function(e) {
-//     // setMode(STOP)
-//     setLeft(STOP)
-//     setRight(STOP)
-//     e.preventDefault()
-//     pressed = false
-//     return false
-// })
+.on('keyup', function(e) {
+    // setMode(STOP)
+    setLeft(STOP)
+    setRight(STOP)
+    e.preventDefault()
+    pressed = false
+    return false
+})
 
-// .on('keydown', function(e) {
-//     if (!pressed) {
+.on('keydown', function(e) {
+    if (!pressed) {
 
-//         var code = e.keyCode
-//         console.log("DOWN", code)
+        var code = e.keyCode
+        console.log("DOWN", code)
 
-//         if (code == KEY_UP) {
-//             setMode(FORWARD)
-//         }
+        if (code == KEY_UP) {
+            setRight(FORWARD)
+            setLeft(FORWARD)
+        }
 
-//         else if (code == KEY_DOWN) {
-//             setMode(BACK)
-//         }
+        else if (code == KEY_DOWN) {
+            // setMode(BACK)
+            setRight(BACK)
+            setLeft(BACK)
+        }
 
-//         else if (code == KEY_RIGHT) {
-//             setMode(RIGHT)
-//         }
+        else if (code == KEY_RIGHT) {
+            setMode(RIGHT)
+        }
 
-//         else if (code == KEY_LEFT) {
-//             setMode(LEFT)
-//         }
+        else if (code == KEY_LEFT) {
+            setMode(LEFT)
+        }
 
-//         else if (code == KEY_Q) {
-//             setLeft(FORWARD)
-//         }
+        else if (code == KEY_Q) {
+            setLeft(FORWARD)
+        }
 
-//         else if (code == KEY_A) {
-//             setLeft(BACK)
-//         }
+        else if (code == KEY_A) {
+            setLeft(BACK)
+        }
 
-//         else if (code == KEY_W) {
-//             setRight(FORWARD)
-//         }
+        else if (code == KEY_W) {
+            setRight(FORWARD)
+        }
 
-//         else if (code == KEY_S) {
-//             setRight(BACK)
-//         }
+        else if (code == KEY_S) {
+            setRight(BACK)
+        }
 
-//         pressed = true    
-//     }
+        pressed = true    
+    }
     
-//     return false
-// })
-
-
-$(".control.left.up")
-.on('touchdown', function() {
-    $(this).text("DOWN")
+    return false
 })
+
+
+$(".control")
 .on('touchup', function() {
-    $(this).text("UP")  
+    setLeft(STOP)
+    setRight(STOP)
 })
 
+$(".control.left.up").on('touchdown', function() {
+    setLeft(FORWARD)
+})
 
-// $(".control.right")
-// .on('touchdown', function() {
-//     $(this).text("DOWN")
-// })
+$(".control.left.down").on('touchdown', function() {
+    setLeft(BACK)
+})
 
-// .on('touchup', function() {
-//     $(this).text("UP")
-// })
+$(".control.right.up").on('touchdown', function() {
+    setRight(FORWARD)    
+})
+
+$(".control.right.down").on('touchdown', function() {
+    setRight(BACK)    
+})
+
 
 
 function setMode(code) {
