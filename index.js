@@ -75,23 +75,24 @@ var pressed = false
 //     return false
 // })
 
-$(".control.left")
+
+$(".control.left.up")
 .on('touchdown', function() {
-    $(this).css("background", "black")
+    $(this).text("DOWN")
 })
-
 .on('touchup', function() {
-    $(this).css("background", null)
+    $(this).text("UP")  
 })
 
-$(".control.right")
-.on('touchdown', function() {
-    $(this).css("background", "black")
-})
 
-.on('touchup', function() {
-    $(this).css("background", null)
-})
+// $(".control.right")
+// .on('touchdown', function() {
+//     $(this).text("DOWN")
+// })
+
+// .on('touchup', function() {
+//     $(this).text("UP")
+// })
 
 
 function setMode(code) {
