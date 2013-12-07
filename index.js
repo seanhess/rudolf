@@ -20,60 +20,79 @@ var RIGHT = 4;
 
 var pressed = false
 
-$(document)
+// $(document)
 
-.on('keyup', function(e) {
-    // setMode(STOP)
-    setLeft(STOP)
-    setRight(STOP)
-    e.preventDefault()
-    pressed = false
-    return false
-})
+// .on('keyup', function(e) {
+//     // setMode(STOP)
+//     setLeft(STOP)
+//     setRight(STOP)
+//     e.preventDefault()
+//     pressed = false
+//     return false
+// })
 
-.on('keydown', function(e) {
-    if (!pressed) {
+// .on('keydown', function(e) {
+//     if (!pressed) {
 
-        var code = e.keyCode
-        console.log("DOWN", code)
+//         var code = e.keyCode
+//         console.log("DOWN", code)
 
-        if (code == KEY_UP) {
-            setMode(FORWARD)
-        }
+//         if (code == KEY_UP) {
+//             setMode(FORWARD)
+//         }
 
-        else if (code == KEY_DOWN) {
-            setMode(BACK)
-        }
+//         else if (code == KEY_DOWN) {
+//             setMode(BACK)
+//         }
 
-        else if (code == KEY_RIGHT) {
-            setMode(RIGHT)
-        }
+//         else if (code == KEY_RIGHT) {
+//             setMode(RIGHT)
+//         }
 
-        else if (code == KEY_LEFT) {
-            setMode(LEFT)
-        }
+//         else if (code == KEY_LEFT) {
+//             setMode(LEFT)
+//         }
 
-        else if (code == KEY_Q) {
-            setLeft(FORWARD)
-        }
+//         else if (code == KEY_Q) {
+//             setLeft(FORWARD)
+//         }
 
-        else if (code == KEY_A) {
-            setLeft(BACK)
-        }
+//         else if (code == KEY_A) {
+//             setLeft(BACK)
+//         }
 
-        else if (code == KEY_W) {
-            setRight(FORWARD)
-        }
+//         else if (code == KEY_W) {
+//             setRight(FORWARD)
+//         }
 
-        else if (code == KEY_S) {
-            setRight(BACK)
-        }
+//         else if (code == KEY_S) {
+//             setRight(BACK)
+//         }
 
-        pressed = true    
-    }
+//         pressed = true    
+//     }
     
-    return false
+//     return false
+// })
+
+$(".control.left")
+.on('touchdown', function() {
+    $(this).css("background", "black")
 })
+
+.on('touchup', function() {
+    $(this).css("background", null)
+})
+
+$(".control.right")
+.on('touchdown', function() {
+    $(this).css("background", "black")
+})
+
+.on('touchup', function() {
+    $(this).css("background", null)
+})
+
 
 function setMode(code) {
     setUrl("/setMode", code)

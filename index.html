@@ -4,26 +4,46 @@
 <script src="index.js" type="text/javascript"></script>
 
 <style>
+
+    body, html {
+        overflow: hidden;
+    }
+
     .control {
         position: absolute;
         width: 50%;
-        height: 100%;
-        left: 0px;
+        height: 50%;
         color: white;
     }
 
-    .control.left {
+    .control.left.up {
         background: blue;
         left: 0px;
         top: 0px;
-        bottom: 0px;
-        left: 50%;
+        bottom: 50%;
+        left: 0px;
     }
 
-    .control.right {
+    .control.left.down {
+        background: blue;
+        left: 0px;
+        top: 50%;
+        bottom: 50%;
+        left: 0px;
+    }
+
+    .control.right.up {
         background: red;
         right: 0px;
         top: 0px;
+        bottom: 50%;
+    }
+
+    .control.right.down {
+        background: red;
+        right: 0px;
+        top: 50%;
+        left: 50%;
         bottom: 0px;
     }
 
@@ -31,13 +51,22 @@
 
 <body>
 
-<div id="left" class="control left">
-    LEFT
+<div class="control left up">
+    LEFT UP
 </div>
 
-<div id="right" class="control right">
-    RIGHT
+<div class="control left down">
+    LEFT DOWN
 </div>
+
+<div class="control right up">
+    RIGHT UP
+</div>
+
+<div class="control right down">
+    RIGHT DOWN
+</div>
+
 
 
 </body>
