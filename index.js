@@ -82,27 +82,33 @@ $(document)
 $(".control.left")
 .on('touchend', function() {
     setLeft(STOP)
+    $(this).text("stop")
 })
 
 $(".control.right")
 .on('touchend', function() {
     setRight(STOP)
+    $(this).text("stop")
 })
 
 $(".control.left.up").on('touchstart', function() {
     setLeft(FORWARD)
+    $(this).text("fwd")
 })
 
 $(".control.left.down").on('touchstart', function() {
-    setLeft(FORWARD)
+    setLeft(BACK)
+    $(this).text("back")
 })
 
 $(".control.right.up").on('touchstart', function() {
-    setLeft(FORWARD)    
+    setRight(FORWARD)    
+    $(this).text("fwd")
 })
 
 $(".control.right.down").on('touchstart', function() {
-    setLeft(FORWARD)
+    setRight(BACK)
+    $(this).text("back")
 })
 
 
