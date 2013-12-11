@@ -112,6 +112,11 @@ $(".control.right.down").on('touchstart', function() {
 })
 
 
+$(".control.FIRE").on('touchend', function() {
+    $(this).text("BOOM!")
+    setUrl("/shoot", "")
+})
+
 
 function setMode(code) {
     setUrl("/setMode", code)
